@@ -10,6 +10,7 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
+#import *.osm.pbf file
 if [ "$1" = "import" ]; then
     # Initialize PostgreSQL
     service postgresql start
@@ -32,6 +33,7 @@ if [ "$1" = "import" ]; then
     exit 0
 fi
 
+#run the openstreetmap tile server
 if [ "$1" = "run" ]; then
     # Initialize PostgreSQL and Apache
     service postgresql start
